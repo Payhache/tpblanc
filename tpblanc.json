@@ -1,0 +1,12 @@
+{
+  "chaussure": [
+    {
+      "id": 1,
+      "nom": "f50",
+      "marque": "Adidas",
+      "type": "Football",
+      "taille": 43,
+      "dateEntreStock": "2012-04-23T18:25:43.511Z"
+    }
+  ]
+}
