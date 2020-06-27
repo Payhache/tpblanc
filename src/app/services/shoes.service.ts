@@ -1,5 +1,5 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http/http';
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { Shoe } from '../models/shoe';
 import { catchError, retry } from 'rxjs/internal/operators';
@@ -24,7 +24,20 @@ export class ShoesService {
       .get<Shoe[]>(this.apiURL)
       .pipe(retry(1), catchError(this.handleError));
   }
-
+  //Création d'une fonction qui va récuperer une seule chaussure via son id
+  // Sur le serveur :
+  getOneShoe(id: number): Observable<Shoe> {
+    return this.http
+      .get<Shoe>(this.apiURL + '/' + id)
+      .pipe(retry(1), catchError(this.handleError));
+  }
+  //Création d'une fonction pour update une chaussure
+  // Sur le serveur :
+  updateShoe(shoe: Shoe) {
+    return this.http
+      .put<Shoe>(this.apiURL + '/' + shoe.id, shoe, this.httpOptions)
+      .pipe(retry(1), catchError(this.handleError));
+  }
   // EN cas d'erreure de communication avec le serveur
   handleError(error) {
     //déclaration d'une variable vide pour y associer un message d'erreur

@@ -7,18 +7,23 @@ import { MenuComponent } from './components/menu/menu.component';
 import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListItemsComponent } from './components/list-items/list-items.component';
-
+import {HttpClientModule} from '@angular/common/http';
+import { DetailItemComponent } from './components/detail-item/detail-item.component';
+import {FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     HomeComponent,
-    ListItemsComponent
+    ListItemsComponent,
+    DetailItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

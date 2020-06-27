@@ -1,0 +1,39 @@
+<h2> Modifier Chaussure </h2>
+
+<form #shoeForm="ngForm" (ngSubmit)="sendChange()">
+    <label for="nom">Nom Chaussure</label>
+<input type="text" class="form-control" id="nom" name="nom" required [(ngModel)]="shoe.nom" #nom="ngModel">
+<div [hidden]="nom.valid"
+    class="alert alert-danger">
+    Nom obligatoire
+</div>
+<label for="marque">Marque Chaussure</label>
+<input type="text" class="form-control" id="marque" name="marque" required [(ngModel)]="shoe.marque" #marque="ngModel">
+<div [hidden]="marque.valid"
+    class="alert alert-danger">
+    Marque obligatoire
+</div>
+<label for="type">type Chaussure</label>
+<input type="text" class="form-control" id="type" name="type" required [(ngModel)]="shoe.type" #type="ngModel">
+<div [hidden]="type.valid"
+    class="alert alert-danger">
+    Type obligatoire
+</div>
+
+<label for="taille">Taille Chaussure</label>
+<input type="text" class="form-control" id="taille" name="taille" required [(ngModel)]="shoe.taille" #taille="ngModel">
+<div [hidden]="taille.valid"
+    class="alert alert-danger">
+    Taille obligatoire
+</div>
+<label for="Date"> Date entrée en stock </label>
+<input type="Date" class="form-control" id="Date" name="Date" required [(ngModel)]="shoe.dateEntreStock" #Date="ngModel">
+<div [hidden]="Date.valid"
+    class="alert alert-danger">
+    Vous devez renseigner  une date de stockage
+</div>
+
+<input type="submit" [disabled]="!shoeForm.valid">
+</form>
+
+

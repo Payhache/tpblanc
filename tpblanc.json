@@ -2,13 +2,19 @@
   "chaussures": [
     {
       "id": 1,
-      "nom": "f50",
+      "nom": "f51",
       "marque": "Adidas",
       "type": "Football",
+      "taille": 43,
+      "dateEntreStock": "2012-04-23T18:25:43.511Z"
+    },
+    {
+      "id": 2,
+      "nom": "Stan Smith",
+      "marque": "Adidas",
+      "type": "Runing",
       "taille": 43,
       "dateEntreStock": "2012-04-23T18:25:43.511Z"
     }
   ]
 }
-
-

@@ -11,13 +11,16 @@
 
   </thead>
   <tbody>
-      <tr>
-          <td>Test</td>
-          <td>Test</td>
-          <td>Test</td>
-          <td>Test</td>
-          <td>Test</td>
-          <td>Test</td>
+      <tr *ngFor="let shoe of this.shoes">
+          <td>{{shoe.nom}}</td>
+          <td>{{shoe.marque}}</td>
+          <td>{{shoe.type}}</td>
+          <td>{{shoe.taille}}</td>
+          <td>{{shoe.dateEntreStock | date:'dd/MM/yy'}} </td>
+          <td>
+            <a [routerLink]="['/shoe', shoe.id]"> modifier </a>
+            <a>Supprimer</a>
+          </td>
       </tr>
   </tbody>
 </table>
